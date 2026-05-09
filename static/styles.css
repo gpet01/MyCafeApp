@@ -40,3 +40,242 @@ nav {
     justify-content: space-between;
     transition: background .4s, padding .4s;
 }
+
+nav.scrolled {
+    background: rgba(12,8,6,.92);
+    backdrop-filter: blur(12px);
+    padding: 18px 52px;
+    border-bottom: 1px solid rgba(196,145,58,.12);
+}
+
+.nav-logo {
+    font-weight:400;
+    font-size: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: .08em;
+    color: var(--white);
+    text-decoration: none;
+}
+
+.nav-links {
+    display:flex;
+    gap: 36px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: .15em;
+    color: var(--cream-muted);
+    text-decoration: none;
+    transition: color .25s;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px; left:0;
+    background: var(--gold);
+    transition: width .3s;
+    width: 0; height:1px;
+}
+
+.nav-links a:hover {
+    color: var(--cream);
+}
+
+.nav-links a:hover:after {
+    width: 100%;
+}
+
+.nav-phone {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-decoration: none;
+    color: var(--gold-dim);
+    transition: color .25s;
+}
+
+.nav-phone:hover {
+    color: var(--gold);
+}
+
+/*-------------------- CSS GIA HERO ------------------------ */
+
+#hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 52px 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-tag {
+    font-size: 11px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp .8s .3s ease forwards;
+}
+
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(72px, 10vw, 140px);
+  font-weight: 300;
+  line-height: .92;
+  color: var(--white);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp .9s .5s ease forwards;
+}
+
+.hero-title em {
+    color: var(--gold-light);
+    font-style: italic;
+}
+
+.hero-title .num {
+    font-size: .52em;
+    vertical-align: super;
+    color: var(--gold);
+    margin-left: 4px;
+}
+
+.hero-bottom {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 48px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp .8s .9s ease forwards;
+}
+
+.hero-sub {
+    max-width: 340px;
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--cream-muted);
+}
+
+.hero-sub strong {
+    color: var(--cream);
+    font-weight: 400;
+}
+
+.hero-cta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 14px 36px;
+    background: var(--gold);
+    color: var(--espresso);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background .25s, transform .2s;
+}
+
+.btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+}
+
+.btn-ghost {
+    display: inline-block;
+    padding: 14px 36px;
+    border: 1px solid rgba(196, 145, 58, .4);
+    color: var(--cream-muted);
+    font-size: 12px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: border-color .25s, color .25s;
+
+}
+
+.btn-ghost:hover {
+    border-color: var(--gold);
+    color: var(--cream);
+}
+
+.scroll-hint {
+    position:absolute;
+    bottom: 30px; left: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    animation: fadeUp .8s 1.4s ease forwards;
+}
+
+.scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollPulse 1.8s 18s ease-in-out infinite;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scrollPulse {
+    0%, 100% {opacity: 1;}
+    50% {opacity: .3;}
+}
+
+/* Ticket Css */
+
+.strip {
+    background: var(--gold);
+    padding: 16px 0;
+    overflow: hidden;
+}
+
+.strip-inner {
+    display:flex;
+    gap: 80px;
+    animation: ticker 22s linear infinite;
+    white-space: nowrap;
+    width: max-content;
+}
+
+.strip-item {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--espresso);
+}
+
+.strip-item::after {
+    content: '·';
+    margin-left: 80px;
+    color: rgba(12,8,6,.3);
+}
+
+
+
+@keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
