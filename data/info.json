@@ -1,0 +1,20 @@
+{
+  "name": "Café Aroma 55",
+  "tagline": "The classic Aroma with a modern soul.",
+  "address": "55 Wall St, Norwalk, CT 06850",
+  "phone": "(203) 354-0677",
+  "email": "cafearoma55@hotmail.com",
+  "instagram": "https://www.instagram.com/cafearoma55/",
+  "facebook": "https://www.facebook.com/CafeAroma55/",
+  "yelp": "https://www.yelp.com/biz/cafe-aroma-norwalk",
+  "maps": "https://maps.google.com/?q=55+Wall+St+Norwalk+CT",
+  "hours": {
+    "Monday":    "8:00 am – 8:00 pm",
+    "Tuesday":   "8:00 am – 8:00 pm",
+    "Wednesday": "8:00 am – 8:00 pm",
+    "Thursday":  "8:00 am – 8:00 pm",
+    "Friday":    "8:00 am – 8:00 pm",
+    "Saturday":  "8:30 am – 8:00 pm",
+    "Sunday":    "8:30 am – 8:00 pm"
+  }
+}
