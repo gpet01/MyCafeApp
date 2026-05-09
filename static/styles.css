@@ -1,0 +1,31 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --espresso:   #0c0806;
+  --dark:       #160f0a;
+  --mid:        #1f1510;
+  --surface:    #2c1e16;
+  --warm:       #3a2819;
+  --gold:       #c4913a;
+  --gold-light: #ddb96a;
+  --gold-dim:   #8a612a;
+  --cream:      #f0e4d0;
+  --cream-muted:#a89278;
+  --white:      #faf5ed;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--espresso);
+  color: var(--cream);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
+}   
