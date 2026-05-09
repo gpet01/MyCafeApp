@@ -18,6 +18,10 @@ from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask(__name__)
 app.secret_key = os.getenv("SECRET_KEY", "dev-secret-key")
 
+@app.context_processor
+def inject_globals():
+    return { "now": datetime.datetime.now()}
+
 @app.route("/")
 def home():
     return render_template("index.html")

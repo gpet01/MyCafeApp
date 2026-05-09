@@ -1,10 +1,264 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-  <h1>Hello World</h1>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Hero page that concludes the first page, title and buttons -->
+
+<section id="hero">
+    <div class="hero-tag">Est. Norwalk, Connecticut</div>
+
+    <h1 class="hero-title">
+        <em>Café</em> <br>
+        Aroma <span class="num">55</span>
+    </h1>
+
+    <div class="hero-bottom">
+        <p class="hero-sub">
+            A <strong>charming neighborhood café</strong> on Wall Street where every cup is crafted with care,
+            every guest welcomed like family.
+        </p>
+
+        <div class="hero-cta">
+            <a href="#menu" class="btn-primary">Explore Menu</a>
+            <a href="#visit" class="btn-ghost">Find Us</a>
+        </div>
+    </div>
+
+    <div class="scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+    </div>
+
+</section>
+
+<!-- Ταινία επανάληψης  -->
+
+<div class="strip">
+    <div class="strip-inner">
+        <span class="strip-item">Fresh Ground Lavazza</span>
+        <span class="strip-item">Freddo Espresso</span>
+        <span class="strip-item">Homemade Gelato</span>
+        <span class="strip-item">Organic Ingredients</span>
+        <span class="strip-item">Outdoor Seating</span>
+        <span class="strip-item">Greek Family Owned</span>
+        <span class="strip-item">Norwalk's Hidden Gem</span>
+        <span class="strip-item">Open Mon - Sun</span>
+        <!-- 2 φορές ώστε να συνεχίζεται η λούπα -->
+        <span class="strip-item">Fresh Ground Lavazza</span>
+        <span class="strip-item">Freddo Espresso</span>
+        <span class="strip-item">Homemade Gelato</span>
+        <span class="strip-item">Organic Ingredients</span>
+        <span class="strip-item">Outdoor Seating</span>
+        <span class="strip-item">Greek Family Owned</span>
+        <span class="strip-item">Norwalk's Hidden Gem</span>
+        <span class="strip-item">Open Mon – Sun</span>
+    </div>
+</div>
+
+<!-- About Section -->
+
+<section id="about">
+    <div class="about-text reveal">
+        <div class="section-label"> Our Story</div>
+
+        <h2>A classic café <br> with a <em>modern soul</em></h2>
+        <p>
+          Café Aroma is a <strong>Greek family-owned</strong> neighborhood treasure nestled at
+          55 Wall Street in the heart of Norwalk. From the moment you walk in, you feel the warmth
+          — the kind that comes not from marketing, but from genuine passion for good coffee.
+        </p>
+        <p>
+          Owner Paul and his family have built something rare: a place where locals feel at home
+          and visitors feel they've found a secret. Coffee is the heart of everything — from silky
+          Lavazza espresso to the iconic <strong>Freddo</strong> that keeps everyone coming back.
+        </p>
+
+        <div class="about-stats">
+          <div class="stat-box"><span class="stat-num">4.6★</span><span class="stat-label">237+ Reviews</span></div>
+          <div class="stat-box"><span class="stat-num">#2</span><span class="stat-label">Coffee in Norwalk</span></div>
+          <div class="stat-box"><span class="stat-num">100%</span><span class="stat-label">Organic Milk</span></div>
+          <div class="stat-box"><span class="stat-num">∞</span><span class="stat-label">Good Vibes</span></div>
+        </div>
+      </div>
+
+      <div class="about-visual reveal">
+        <div class="about-card">
+          <p class="about-quote">"Best coffee, service impeccable. Clean with a simple ambiance. Everything prepared to order."</p>
+          <p class="about-quote-attr">— Andy A., Yelp Review</p>
+          <div class="float-badge"><span>55</span><span>Wall St</span></div>
+        </div>
+      </div>
+</section>
+
+<!-- Section του Menu -->
+
+<section id="menu">
+  <div class="menu-header reveal">
+    <div>
+      <div class="section-label">What We Serve</div>
+      <h2>The <em>menu</em></h2>
+    </div>
+    <p class="menu-sub">Every drink made to order. Every ingredient chosen with intention.</p>
+  </div>
+
+  <div class="menu-grid">
+    <div class="menu-cat reveal">
+      <span class="cat-icon">☕</span>
+      <div class="cat-name">Espresso Bar</div>
+      <p class="cat-desc">Fresh ground Lavazza beans, precision-extracted. Lattes, cappuccinos, macchiatos — all made with filtered water.</p>
+      <span class="cat-highlight">Specialty Coffee</span>
+    </div>
+    <div class="menu-cat reveal">
+      <span class="cat-icon">🧊</span>
+      <div class="cat-name">Freddo &amp; Iced</div>
+      <p class="cat-desc">Our most popular drinks. The Freddo Espresso and Freddo Cappuccino — the latest craze and now a Café Aroma signature.</p>
+      <span class="cat-highlight hot">Most Popular</span>
+    </div>
+    <div class="menu-cat reveal">
+      <span class="cat-icon">🍵</span>
+      <div class="cat-name">Teas &amp; Wellness</div>
+      <p class="cat-desc">Mighty Leaf Organic Teas — a curated collection of loose-leaf blends for every mood.</p>
+      <span class="cat-highlight">Organic</span>
+    </div>
+    <div class="menu-cat reveal">
+      <span class="cat-icon">🍦</span>
+      <div class="cat-name">Gelato &amp; Sorbet</div>
+      <p class="cat-desc">Handcrafted in small batches. Paul won't let you leave without trying a flavor.</p>
+      <span class="cat-highlight hot">House Made</span>
+    </div>
+    <div class="menu-cat reveal">
+      <span class="cat-icon">🥐</span>
+      <div class="cat-name">Pastries &amp; Sweets</div>
+      <p class="cat-desc">Flaky croissants, walnut cake, brownies — baked fresh daily.</p>
+      <span class="cat-highlight">Fresh Daily</span>
+    </div>
+    <div class="menu-cat reveal">
+      <span class="cat-icon">🥗</span>
+      <div class="cat-name">Savory Edibles</div>
+      <p class="cat-desc">Light bites to complement your coffee. Perfect for a slow morning.</p>
+      <span class="cat-highlight">GMO Free</span>
+    </div>
+  </div>
+</section>
+
+<!-- Section με τα Values -->
+<section id="values">
+  <div class="values-inner">
+    <div class="values-headline reveal">
+      <div class="section-label">Our Ingredients</div>
+      <h2>Crafted with <em>intention</em></h2>
+    </div>
+
+    <div class="values-list">
+      <div class="value-pill reveal">
+        <div class="value-dot"></div>
+        <div class="value-text">
+          <strong>Lavazza Fresh Ground</strong>
+          <span>Premium Italian coffee beans, ground fresh for every single cup.</span>
+        </div>
+      </div>
+      <div class="value-pill reveal">
+        <div class="value-dot"></div>
+        <div class="value-text">
+          <strong>Copper-Filtered Water</strong>
+          <span>All drinks made with water filtered through copper pipes for purity.</span>
+        </div>
+      </div>
+      <div class="value-pill reveal">
+        <div class="value-dot"></div>
+        <div class="value-text">
+          <strong>Organic Milk Options</strong>
+          <span>Regular, almond, and coconut milk — all certified organic.</span>
+        </div>
+      </div>
+      <div class="value-pill reveal">
+        <div class="value-dot"></div>
+        <div class="value-text">
+          <strong>Organic Sugar &amp; Stevia</strong>
+          <span>Sweetness without compromise. Natural alternatives always available.</span>
+        </div>
+      </div>
+      <div class="value-pill reveal">
+        <div class="value-dot"></div>
+        <div class="value-text">
+          <strong>GMO Free Products</strong>
+          <span>Everything we serve is thoughtfully sourced and free of GMOs.</span>
+        </div>
+      </div>
+      <div class="value-pill reveal">
+        <div class="value-dot"></div>
+        <div class="value-text">
+          <strong>Made to Order</strong>
+          <span>Nothing sits under a lamp. Every drink and bite crafted on request.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section για το Visit -->
+<section id="visit">
+    <h2 class="reveal">Come <em>Visit Us</em></h2>
+
+    <div class="reveal">
+        <div class="section-label">Hours</div>
+        <div class="hours-table">
+            <div class="hours-row">
+                <span class="day" data-day="Monday">Monday</span>
+                <span class="time">8:00 am - 8:00 pm</span>
+            </div>
+            <div class="hours-row">
+                <span class="day" data-day="Tuesday">Tuesday</span>
+                <span class="time">8:00 am - 8:00 pm</span>
+            </div>
+
+            <div class="hours-row">
+                <span class="day" data-day="Wednesday">Wednesday</span>
+                <span class="time">8:00 am – 8:00 pm</span>
+            </div>
+            <div class="hours-row">
+                <span class="day" data-day="Thursday">Thursday</span>
+                <span class="time">8:00 am – 8:00 pm</span>
+            </div>
+            <div class="hours-row">
+                <span class="day" data-day="Friday">Friday</span>
+                <span class="time">8:00 am – 8:00 pm</span>
+            </div>
+            <div class="hours-row">
+                <span class="day" data-day="Saturday">Saturday</span>
+                <span class="time">8:30 am – 8:00 pm</span>
+            </div>
+            <div class="hours-row">
+                <span class="day" data-day="Sunday">Sunday</span>
+                <span class="time">8:30 am – 8:00 pm</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="reveal">
+        <div class="section-label">Location</div>
+        <div class="location-card">
+          <h3>55 Wall Street</h3>
+          <div class="location-detail">
+            <span class="loc-icon">📍</span>
+            <div class="loc-text">55 Wall St, Norwalk, CT 06850<br>Free street parking on side streets until 6pm</div>
+          </div>
+          <div class="location-detail">
+            <span class="loc-icon">📞</span>
+            <div class="loc-text"><a href="tel:2033540677">(203) 354-0677</a></div>
+          </div>
+          <div class="location-detail">
+            <span class="loc-icon">✉️</span>
+            <div class="loc-text"><a href="mailto:cafearoma55@hotmail.com">cafearoma55@hotmail.com</a></div>
+          </div>
+          <div class="location-detail">
+            <span class="loc-icon">🌿</span>
+            <div class="loc-text">Outdoor seating · Free WiFi · Apple Pay accepted</div>
+          </div>
+          <a href="https://maps.google.com/?q=55+Wall+St+Norwalk+CT" target="_blank" class="map-btn">Get Directions →</a>
+        </div>
+      </div>
+</section>
+
+
+{% endblock %}
