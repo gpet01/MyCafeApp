@@ -112,7 +112,7 @@ nav.scrolled {
     padding: 0 52px 80px;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(165deg, #1a0f08 0%, #0c0806 50%, #160a04 100%); /* ← πρόσθεσε αυτό */
+    background: linear-gradient(165deg, #1a0f08 0%, #0c0806 50%, #160a04 100%); 
 }
 
 .hero-tag {
