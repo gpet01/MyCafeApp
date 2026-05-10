@@ -503,3 +503,40 @@ section {
 .menu-cat:hover::after {
     width: 100%;
 }
+
+.cat-icon {
+    font-size: 32px;
+    margin-bottom: 24px;
+    display: block;
+}
+
+.cat-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--cream);
+    margin-bottom: 16px;
+}
+
+.cat-desc {
+    font-size: 13px;
+    line-height: 1.75;
+    color: var(--cream-muted);
+}
+
+.cat-highlight {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 6px 14px;
+    background: rgba(196,145,58,.1);
+    border: 1px solid rgba(196,145,58,.2);
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--gold);
+}
+
+.cat-highlight.hot {
+    background: rgba(196,145,58,.15);
+    border-color: rgba(196,145,58,.35);
+}
