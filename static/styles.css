@@ -540,3 +540,73 @@ section {
     background: rgba(196,145,58,.15);
     border-color: rgba(196,145,58,.35);
 }
+
+/* Section για τα VALUES */
+
+#values {
+    background: var(--surface);
+    padding: 100px 52px;
+}
+
+.values-inner {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.values-headline {
+    flex: 0 0 320px;
+}
+
+.values-headline h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(38px,4vw, 54px);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--white);
+}
+
+.values-headline h2 em {
+    color: var(--gold-light);
+    font-style: italic;
+}
+
+.values-list {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+}
+
+.value-pill {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 22px;
+    background: rgba(12,8,6,.4);
+    border: 1px solid rgba(196,145,58,.1);
+    border-radius: 10px;
+}
+
+.value-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+    margin-top: 5px;
+}
+
+.value-text strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--cream);
+    margin-bottom: 4px;
+}
+
+.value-text span {
+    font-size: 13px;
+    color: var(--cream-muted);
+    line-height: 1.6;
+}
