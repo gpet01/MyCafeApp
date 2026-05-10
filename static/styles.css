@@ -112,6 +112,7 @@ nav.scrolled {
     padding: 0 52px 80px;
     position: relative;
     overflow: hidden;
+    background: linear-gradient(165deg, #1a0f08 0%, #0c0806 50%, #160a04 100%); /* ← πρόσθεσε αυτό */
 }
 
 .hero-tag {
@@ -175,6 +176,30 @@ nav.scrolled {
     align-items: center;
     gap: 16px;
 }
+.hero-ring {
+  position: absolute;
+  top: 12%; right: 8%;
+  width: 380px; height: 380px;
+  border-radius: 50%;
+  border: 1px solid rgba(196,145,58,.15);
+  pointer-events: none;
+}
+
+.hero-ring::before {
+  content: '';
+  position: absolute;
+  inset: 22px;
+  border-radius: 50%;
+  border: 1px solid rgba(196,145,58,.1);
+}
+
+.hero-ring::after {
+  content: '';
+  position: absolute;
+  inset: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(196,145,58,.06);
+}
 
 .btn-primary {
     display: inline-block;
@@ -215,7 +240,7 @@ nav.scrolled {
 .scroll-hint {
     position:absolute;
     bottom: 30px; left: 50%;
-    transform: translateY(-50%);
+    transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -228,7 +253,7 @@ nav.scrolled {
     width: 1px;
     height: 40px;
     background: linear-gradient(to bottom, var(--gold), transparent);
-    animation: scrollPulse 1.8s 18s ease-in-out infinite;
+    animation: scrollPulse 1.8s 1.8s ease-in-out infinite;
 }
 
 @keyframes fadeUp {
@@ -300,17 +325,17 @@ section {
 
 .section-label::before {
     content: '';
-    display: inline-block
+    display: inline-block;
     width: 30px;
     height: 1px;
     background: var(--gold);
 }
 
 #about {
-    display:grid;
+    display: grid;
     grid-template-columns: 1fr 1fr;
-    font-size: clamp(42px, 5vw, 64px);
     align-items: center;
+    gap: 80px;
 }
 
 .about-text h2 {
@@ -357,7 +382,7 @@ section {
 .stat-num {
     font-family: 'Cormorant Garamond', serif;
     font-size: 48px;
-    font-weight: 300px;
+    font-weight: 300;
     color: var(--gold-light);
     line-height: 1;
     display: block;
@@ -380,7 +405,7 @@ section {
 }
 
 .about-card::before {
-    content: '';
+    content: '"';
     font-family: 'Cormorant Garamond', serif;
     font-size: 120px;
     line-height: 1;
@@ -450,7 +475,7 @@ section {
 }
 
 .menu-header h2 {
-    font-family: 'Cormorant Garamont', serif;
+    font-family: 'Cormorant Garamond', serif;
     font-size: clamp(42px, 5vw, 64px);
     font-weight: 300;
     line-height: 1.1;
