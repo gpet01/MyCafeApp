@@ -435,3 +435,71 @@ section {
     color: rgba(12,8,6,.6);
     margin-top: 2px;
 }
+
+/* Section Για το Menu */
+
+#menu {
+    background: var(--dark);
+}
+
+.menu-header {
+    display:flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 72px;
+}
+
+.menu-header h2 {
+    font-family: 'Cormorant Garamont', serif;
+    font-size: clamp(42px, 5vw, 64px);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--white);
+}
+
+.menu-header h2 em {
+    color: var(--gold-light);
+    font-style: italic;
+}
+
+.menu-sub {
+    max-width: 280px;
+    text-align:right;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--cream-muted);
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2px;
+    background: rgba(196,145,58,.08);
+}
+
+.menu-cat {
+    background: var(--dark);
+    padding: 44px 36px;
+    border: 1px solid rgba(196,145,58,.08);
+    transition: background .3s, border-color .3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-cat::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0; height: 2px;
+    background: var(--gold);
+    transition: width .4s;
+}
+
+.menu-cat:hover {
+    background: var(--mid);
+    border-color: rgba(196,145,58,.2);
+}
+
+.menu-cat:hover::after {
+    width: 100%;
+}
