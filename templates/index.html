@@ -102,44 +102,111 @@
     <p class="menu-sub">Every drink made to order. Every ingredient chosen with intention.</p>
   </div>
 
-  <div class="menu-grid">
-    <div class="menu-cat reveal">
-      <span class="cat-icon">☕</span>
-      <div class="cat-name">Espresso Bar</div>
-      <p class="cat-desc">Fresh ground Lavazza beans, precision-extracted. Lattes, cappuccinos, macchiatos — all made with filtered water.</p>
-      <span class="cat-highlight">Specialty Coffee</span>
-    </div>
-    <div class="menu-cat reveal">
-      <span class="cat-icon">🧊</span>
-      <div class="cat-name">Freddo &amp; Iced</div>
-      <p class="cat-desc">Our most popular drinks. The Freddo Espresso and Freddo Cappuccino — the latest craze and now a Café Aroma signature.</p>
-      <span class="cat-highlight hot">Most Popular</span>
-    </div>
-    <div class="menu-cat reveal">
-      <span class="cat-icon">🍵</span>
-      <div class="cat-name">Teas &amp; Wellness</div>
-      <p class="cat-desc">Mighty Leaf Organic Teas — a curated collection of loose-leaf blends for every mood.</p>
-      <span class="cat-highlight">Organic</span>
-    </div>
-    <div class="menu-cat reveal">
-      <span class="cat-icon">🍦</span>
-      <div class="cat-name">Gelato &amp; Sorbet</div>
-      <p class="cat-desc">Handcrafted in small batches. Paul won't let you leave without trying a flavor.</p>
-      <span class="cat-highlight hot">House Made</span>
-    </div>
-    <div class="menu-cat reveal">
-      <span class="cat-icon">🥐</span>
-      <div class="cat-name">Pastries &amp; Sweets</div>
-      <p class="cat-desc">Flaky croissants, walnut cake, brownies — baked fresh daily.</p>
-      <span class="cat-highlight">Fresh Daily</span>
-    </div>
-    <div class="menu-cat reveal">
-      <span class="cat-icon">🥗</span>
-      <div class="cat-name">Savory Edibles</div>
-      <p class="cat-desc">Light bites to complement your coffee. Perfect for a slow morning.</p>
-      <span class="cat-highlight">GMO Free</span>
-    </div>
+  <!-- Filter Tabs -->
+  <div class="filter-tabs reveal">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="hot">Hot Coffee</button>
+    <button class="filter-btn" data-filter="iced">Iced Coffee</button>
+    <button class="filter-btn" data-filter="pastries">Pastries</button>
+    <button class="filter-btn" data-filter="savory">Savory</button>
+    <button class="filter-btn" data-filter="gelato">Gelato</button>
   </div>
+
+  <!-- Hot Coffee -->
+  <div class="menu-section" data-section="hot">
+    <div class="menu-section-title">Hot Coffee</div>
+    {% for item in menu.hot %}
+    <div class="menu-row">
+      <span class="item-name">{{ item.name }}</span>
+      {% if item.note %}<span class="item-note">{{ item.note }}</span>{% endif %}
+      <span class="item-price">{{ item.price }}</span>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- Iced Coffee -->
+  <div class="menu-section" data-section="iced">
+    <div class="menu-section-title">Iced Coffee</div>
+    {% for item in menu.iced %}
+    <div class="menu-row">
+      <span class="item-name">{{ item.name }}</span>
+      {% if item.note %}<span class="item-note">{{ item.note }}</span>{% endif %}
+      <span class="item-price">{{ item.price }}</span>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- Pastries -->
+  <div class="menu-section" data-section="pastries">
+    <div class="menu-section-title">Pastries &amp; Sweets</div>
+    {% for item in menu.pastries %}
+    <div class="menu-row">
+      <span class="item-name">{{ item.name }}</span>
+      {% if item.note %}<span class="item-note">{{ item.note }}</span>{% endif %}
+      <span class="item-price">{{ item.price }}</span>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- Savory -->
+  <div class="menu-section" data-section="savory">
+    <div class="menu-section-title">Savory Bites</div>
+    {% for item in menu.savory %}
+    <div class="menu-row">
+      <span class="item-name">{{ item.name }}</span>
+      {% if item.note %}<span class="item-note">{{ item.note }}</span>{% endif %}
+      <span class="item-price">{{ item.price }}</span>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- Gelato -->
+  <div class="menu-section" data-section="gelato">
+    <div class="menu-section-title">Gelato &amp; Treats</div>
+    {% for item in menu.gelato %}
+    <div class="menu-row">
+      <span class="item-name">{{ item.name }}</span>
+      {% if item.note %}<span class="item-note">{{ item.note }}</span>{% endif %}
+      <span class="item-price">{{ item.price }}</span>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- Extras Grid -->
+  <div class="extras-grid reveal">
+
+    <div class="extras-box">
+      <div class="extras-title">Extras</div>
+      {% for item in menu.extras %}
+      <div class="extras-row">
+        <span>{{ item.name }}</span>
+        <span>{{ item.price }}</span>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="extras-box">
+      <div class="extras-title">Milk &amp; Creamers</div>
+      {% for item in menu.creamers %}
+      <div class="extras-row">
+        <span>{{ item.name }}</span>
+        <span>{{ item.price if item.price else "Included" }}</span>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="extras-box">
+      <div class="extras-title">Syrups</div>
+      {% for syrup in menu.syrups %}
+      <div class="extras-row">
+        <span>{{ syrup }}</span>
+        <span>+$0.50</span>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+
 </section>
 
 <!-- Section με τα Values -->

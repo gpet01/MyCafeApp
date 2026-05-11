@@ -22,9 +22,13 @@ app.secret_key = os.getenv("SECRET_KEY", "dev-secret-key")
 def inject_globals():
     return { "now": datetime.datetime.now()}
 
+def load_menu():
+    with open(os.path.join(app.root_path, "data", "menu.json")) as f:
+        return json.load(f)
+
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("index.html", menu=load_menu())
 
 if __name__ == "__main__":
     app.run(debug=True)
