@@ -48,4 +48,27 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     hamburger.classList.remove('open');
     navLinks.classList.remove('open');
   })
+});
+
+// Menu filter buttonss //
+const filterButtons = document.querySelectorAll('.filter-btn');
+const menuSections = document.querySelectorAll('.menu-section');
+
+filterButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    //Εδω αφαιρω το active απο ολα τα κουμπια
+    filterButtons.forEach(b => b.classList.remove('active'));
+    //Εδω προσθετω το active στο κουμπι που πατησα
+    btn.classList.add('active');
+
+    const filter = btn.dataset.filter;
+
+    menuSections.forEach(section => {
+      if (filter === 'all' || section.dataset.section === filter) {
+        section.style.display = 'block';
+      } else {
+        section.style.display = 'none';
+      }
+    });
+  });
 })

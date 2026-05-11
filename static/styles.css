@@ -495,76 +495,121 @@ section {
     color: var(--cream-muted);
 }
 
-.menu-grid {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 2px;
-    background: rgba(196,145,58,.08);
+.filter-tabs {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
 }
 
-.menu-cat {
-    background: var(--dark);
-    padding: 44px 36px;
-    border: 1px solid rgba(196,145,58,.08);
-    transition: background .3s, border-color .3s;
-    position: relative;
-    overflow: hidden;
+.filter-btn {
+    padding: 8px 20px;
+    border: 1px solid var(--gold);
+    background: transparent;
+    color: var(--cream-muted);
+    font-family: 'DM SANS', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
 }
 
-.menu-cat::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0;
-    width: 0; height: 2px;
+.filter-btn:hover, .filter-btn.active {
     background: var(--gold);
-    transition: width .4s;
+    color: var(--dark);
+    border-color: var(--gold);
 }
 
-.menu-cat:hover {
-    background: var(--mid);
-    border-color: rgba(196,145,58,.2);
-}
-
-.menu-cat:hover::after {
-    width: 100%;
-}
-
-.cat-icon {
-    font-size: 32px;
-    margin-bottom: 24px;
-    display: block;
-}
-
-.cat-name {
+.menu-section-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 26px;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    font-weight: 400;
+    letter-spacing: 0.05rem;
+    color: var(--cream-muted);
+    text-transform: uppercase;
+    margin: 40px 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(196,145,58,.12);
+}
+
+.menu-row {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(196,145,58,.12);
+}
+
+.item-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
     font-weight: 400;
     color: var(--cream);
+    flex-shrink: 0;
+}
+
+.item-note {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    color: var(--cream-muted);
+    font-style: italic;
+    flex: 1;
+}
+
+.item-price {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--gold);
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+/* extras section */
+
+.extras-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+    gap: 24px;
+    margin-top: 48px;
+}
+
+.extras-box {
+    border: 1px solid rgba(196,145,58,.12);
+    padding: 24px;
+}
+
+.extras-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: var(--cream-muted);
+    text-transform: uppercase;
     margin-bottom: 16px;
 }
 
-.cat-desc {
-    font-size: 13px;
-    line-height: 1.75;
-    color: var(--cream-muted);
+.extras-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(196,145,58,.12);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--cream);
 }
 
-.cat-highlight {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 6px 14px;
-    background: rgba(196,145,58,.1);
-    border: 1px solid rgba(196,145,58,.2);
-    font-size: 11px;
-    letter-spacing: .12em;
-    text-transform: uppercase;
+.extras-row:last-child {
+    border-bottom: none;
+}
+
+.extras-row span:last-child {
     color: var(--gold);
+    font-weight: 500;
 }
 
-.cat-highlight.hot {
-    background: rgba(196,145,58,.15);
-    border-color: rgba(196,145,58,.35);
-}
 
 /* Section για τα VALUES */
 
@@ -891,9 +936,6 @@ footer {
     #about {
         grid-template-columns: 1fr;
         gap: 60px;
-    }
-    .menu-grid {
-        grid-template-columns: 1fr;
     }
     .menu-header {
         flex-direction: column;
