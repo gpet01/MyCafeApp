@@ -30,5 +30,9 @@ def load_menu():
 def home():
     return render_template("index.html", menu=load_menu())
 
+@app.route("/place_order", methods=["POST"])
+def place_order():
+    
+
 if __name__ == "__main__":
     app.run(debug=True)

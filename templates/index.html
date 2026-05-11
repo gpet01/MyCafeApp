@@ -209,6 +209,82 @@
 
 </section>
 
+<!-- Form to pre order -->
+<section id="order-section">
+  <div class="menu-header reveal">
+    <div>
+      <div class="section-label">Skip the Wait</div>
+      <h2>Order <em>ahead</em> </h2>
+    </div>
+    <p class="menu-sub">Place your order, it will be ready when you arrive. We'll confirm by phone.</p>
+  </div>
+
+  <form method="POST" action=" {{ url_for('place_order') }} "  class="order-form reveal">
+    <div class="form-row">
+      <div class="form-group">
+        <label>Your name</label>
+        <input type="text" name="name" placeholder="Nick" required>
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" name="phone" placeholder="(203) 555-0100" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Email <span class="label-note">(Optional, we'll notify you when ready)</span> </label>
+      <input type="email" name="email" placeholder="your@email.com">
+    </div>
+
+    <div class="form-group">
+      <label>What would you like?</label>
+      <select name="item" required>
+        <option value="">- Choose a drink or item -</option>
+        <optgroup label="Hot Coffee">
+          {% for item in menu.hot} 
+            <option> {{item.name}} </option>
+          {% endfor %}
+        </optgroup>
+        <optgroup label="Iced Coffee">
+          {% for item in menu.iced %}
+            <option> {{ item.name }}</option>
+          {% endfor %}
+        </optgroup>
+        <optgroup label="Pastries">
+          {% for item in menu.pastries %}
+            <option> {{ item.name }}</option>
+          {% endfor %}
+        </optgroup>
+        <optgroup label="Savory">
+          {% for item in menu.savory %}
+            <option> {{ item.name }}</option> 
+          {% endfor %}
+        </optgroup>
+        <optgroup label="Gelato">
+          {% for item in menu.gelato %}
+            <option> {{item.name }} </option>
+          {% endfor %}
+        </optgroup>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Pickup Time</label>
+        <input type="time" name="pickup_time" min="8:00" max="19:45" required>
+      </div>
+      <div class="form-group">
+        <label>Special Requests <span class="label-note">(Optional)</span> </label>
+        <input type="text" name="notes" placeholder="Oat milk, extra shot..">
+      </div>
+    </div>
+
+    <button type="submit" class="btn-primary">Place Order</button>
+  </form>
+</section>
+
+<!-- End of the pre order form -->
+
 <!-- Section με τα Values -->
 <section id="values">
   <div class="values-inner">
