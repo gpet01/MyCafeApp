@@ -756,3 +756,93 @@ section {
     color: var(--espresso);
     border-color: var(--gold);
 }
+
+/* Section για το footer */
+
+footer {
+    background: var(--espresso);
+    border-top: 1px solid rgba(196,145,58,.1);
+    padding: 60px 52px 40px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(196,145,58,.08);
+    margin-bottom: 32px;
+}
+
+.footer-brand {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--white);
+}
+
+.footer-brand span {
+    color: var(--gold);
+}
+
+.footer-tagline {
+    font-size: 14px;
+    color: var(--cream-muted);
+    margin-top: 8px;
+    font-style: italic;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links a {
+    font-size: 13px;
+    color: var(--cream-muted);
+    text-decoration: none;
+    transition: color .2;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+.footer-social a {
+    font-size: 12px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+    text-decoration: none;
+    transition: color .2s;
+}
+
+.footer-social a:hover {
+    color: var(--gold);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-copy {
+    font-size: 12px;
+    color: var(--gold-dim);
+    letter-spacing: .06em;
+}
+
+.footer-address {
+    font-size: 12px;
+    color: var(--gold-muted);
+}
+
