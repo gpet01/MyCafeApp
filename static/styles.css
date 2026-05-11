@@ -856,3 +856,80 @@ footer {
 }
 
 .reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* Mobile flexibility */
+
+@media (max-width: 900px) {
+    nav, nav.scrolled { 
+        padding: 20px, 24px;
+    }
+    .nav-links {
+        display: none;
+    }
+    #hero {
+        padding: 0 24px 60px;
+    }
+    .hero-ring {
+        width: 200px;
+        height: 200px;
+        right: 4%;
+    }
+    .hero-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 28px;
+    }
+
+    section {
+        padding: 80px 24px;
+    }
+    #about {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+    .menu-header {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .menu-sub {
+        text-align: left;
+        max-width: none;
+    }
+    .values-inner {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .values-headline {
+        flex: none;
+    }
+    .values-list {
+        grid-template-columns: 1fr;
+    }
+
+    #visit {
+        grid-template-columns: 1fr;
+    }
+    #visit h2 {
+        grid-column: 1;
+    }
+
+    footer {
+        padding: 60px 24px 40px;
+    }
+    .footer-top {
+        flex-direction: column;
+        gap: 32px;
+    }
+    .footer-social {
+        align-items: flex-start;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+
+}
