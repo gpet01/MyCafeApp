@@ -50,6 +50,35 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   })
 });
 
+// Item size selector //
+const itemSelect = document.getElementById('item-select');
+const sizeGroup = document.getElementById('size-group');
+const sizeSelect = document.getElementById('size-select');
+
+if (itemSelect) {
+  itemSelect.addEventListener('change', () => {
+    const selected = itemSelect.value;
+    const allItems = [
+      ...menuData.hot,
+      ...menuData.iced,
+      ...menuData.pastries,
+      ...menuData.savory,
+      ...menuData.gelato
+    ];
+
+    const item = allItems.find(i => i.name === selected);
+
+    if (item && item.note && item.note.includes('/')) {
+      const options = item.note.split('/').map(s => s.trim());
+      sizeSelect.innerHTML = options.map(o => `<option value="${o}">${o}</option>`).join('');
+      sizeGroup.style.display = 'flex';
+    } else {
+      sizeGroup.style.display = 'none';
+      sizeSelect.innerHTML = '';
+    }
+  });
+}
+
 // Menu filter buttonss //
 const filterButtons = document.querySelectorAll('.filter-btn');
 const menuSections = document.querySelectorAll('.menu-section');

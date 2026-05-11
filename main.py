@@ -26,8 +26,7 @@ db = SQLAlchemy(model_class=Base)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mycafe.db'
 db.init_app(app)
 
-with app.app_context():
-    db.create_all()
+
 
 class Order(db.Model):
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
@@ -38,6 +37,9 @@ class Order(db.Model):
     pickup_time: Mapped[str] = mapped_column(String(10))
     notes: Mapped[str] = mapped_column(String(300))
     created_at: Mapped[datetime.datetime] = mapped_column(DateTime, default=datetime.datetime.now)
+
+with app.app_context():
+    db.create_all()
 
 @app.context_processor
 def inject_globals():

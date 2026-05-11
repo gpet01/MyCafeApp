@@ -118,7 +118,9 @@
     {% for item in menu.hot %}
     <div class="menu-row">
       <span class="item-name">{{ item.name }}</span>
-      {% if item.note %}<span class="item-note">{{ item.note }}</span>{% endif %}
+      {% if item.note %}
+        <span class="item-note">{{ item.note }}</span>
+      {% endif %}
       <span class="item-price">{{ item.price }}</span>
     </div>
     {% endfor %}
@@ -238,34 +240,39 @@
 
     <div class="form-group">
       <label>What would you like?</label>
-      <select name="item" required>
-        <option value="">- Choose a drink or item -</option>
+      <select name="item" id="item-select" required>
+        <option value="">— Choose a drink or item —</option>
         <optgroup label="Hot Coffee">
           {% for item in menu.hot %}
-            <option> {{item.name}} </option>
+            <option value="{{ item.name }}">{{ item.name }}</option>
           {% endfor %}
         </optgroup>
         <optgroup label="Iced Coffee">
           {% for item in menu.iced %}
-            <option> {{ item.name }}</option>
+            <option value="{{ item.name }}">{{ item.name }}</option>
           {% endfor %}
         </optgroup>
         <optgroup label="Pastries">
           {% for item in menu.pastries %}
-            <option> {{ item.name }}</option>
+            <option value="{{ item.name }}">{{ item.name }}</option>
           {% endfor %}
         </optgroup>
         <optgroup label="Savory">
           {% for item in menu.savory %}
-            <option> {{ item.name }}</option> 
+            <option value="{{ item.name }}">{{ item.name }}</option>
           {% endfor %}
         </optgroup>
         <optgroup label="Gelato">
           {% for item in menu.gelato %}
-            <option> {{item.name }} </option>
+            <option value="{{ item.name }}">{{ item.name }}</option>
           {% endfor %}
         </optgroup>
       </select>
+    </div>
+
+    <div class="form-group" id="size-group" style="display:none">
+      <label>Size / Preference</label>
+      <select name="size" id="size-select"></select>
     </div>
 
     <div class="form-row">
@@ -282,6 +289,10 @@
     <button type="submit" class="btn-primary">Place Order</button>
   </form>
 </section>
+
+<script>
+  const menuData = {{ menu | tojson }};
+</script>
 
 <!-- End of the pre order form -->
 
