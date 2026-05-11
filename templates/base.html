@@ -14,13 +14,18 @@
     <nav id="nav">
         <a href="{{ url_for('home') }}" class="nav-logo">Café <span>Aroma</span></a>
 
-        <ul class="nav-links">
+        <ul class="nav-links" id="nav-links">
             <li> <a href="#about">Our Story</a> </li>
             <li> <a href="#menu">Menu</a> </li>
             <li> <a href="#values">Ingredients</a> </li>
             <li> <a href="#visit">Visit</a> </li>
         </ul>
         <a href="tel:6983590492" class="nav-phone">6983590492</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
 
         {% block content %}

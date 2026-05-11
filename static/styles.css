@@ -691,6 +691,7 @@ section {
 
 .time.today {
     color: var(--gold-light);
+
 }
 
 .location-card {
@@ -857,22 +858,26 @@ footer {
 
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
+.hamburger {
+    display: none;
+}
+
 /* Mobile flexibility */
 
 @media (max-width: 900px) {
-    nav, nav.scrolled { 
-        padding: 20px, 24px;
+    nav, nav.scrolled {
+        padding: 20px 24px;
+        flex-wrap: wrap;
+        position: fixed;
     }
-    .nav-links {
-        display: none;
-    }
+    .nav-phone { display: none; }
     #hero {
-        padding: 0 24px 60px;
+        min-height: unset;
+        justify-content: flex-start;
+        padding: 80px 15px;
     }
     .hero-ring {
-        width: 200px;
-        height: 200px;
-        right: 4%;
+        display: none;
     }
     .hero-bottom {
         flex-direction: column;
@@ -930,6 +935,62 @@ footer {
         flex-direction: column;
         gap: 8px;
         text-align: center;
+    }
+
+    /* Show elements in Hamburger form when used by a mobile */
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        outline: none;
+        padding: 4px;
+    }
+    .hamburger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: var(--cream);
+        transition: .3s;
+    }
+    .hamburger.open span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    .hamburger.open span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.open span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        position: absolute;
+        top: 64px;
+        left: 0; right: 0;
+        background: rgba(12,8,6,.97);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(196,145,58,.15);
+        padding: 8px 0;
+        z-index: 499;
+        list-style: none;
+    }
+    .nav-links.open {
+        display: flex;
+    }
+    .nav-links li a {
+        padding: 14px 24px;
+        display: block;
+        font-size: 13px;
+        border-bottom: 1px solid rgba(255,255,255,.04);
+        letter-spacing: .12em;
+        text-transform: uppercase;
+    }
+    .scroll-hint {
+        display: none
     }
 
 }
