@@ -18,6 +18,27 @@ from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask(__name__)
 app.secret_key = os.getenv("SECRET_KEY", "dev-secret-key")
 
+
+class Base(DeclarativeBase):
+    pass
+
+db = SQLAlchemy(model_class=Base)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mycafe.db'
+db.init_app(app)
+
+with app.app_context():
+    db.create_all()
+
+class Order(db.Model):
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    name: Mapped[str] = mapped_column(String(100))
+    phone: Mapped[str] = mapped_column(String(20), nullable=False)
+    email: Mapped[str] = mapped_column(String(120))
+    item: Mapped[str] = mapped_column(String(100))
+    pickup_time: Mapped[str] = mapped_column(String(10))
+    notes: Mapped[str] = mapped_column(String(300))
+    created_at: Mapped[datetime.datetime] = mapped_column(DateTime, default=datetime.datetime.now)
+
 @app.context_processor
 def inject_globals():
     return { "now": datetime.datetime.now()}
@@ -32,7 +53,18 @@ def home():
 
 @app.route("/place_order", methods=["POST"])
 def place_order():
-    
+    order = Order(
+        name = request.form['name'],
+        phone = request.form['phone'],
+        email = request.form.get('email', ""),
+        item = request.form['item'],
+        pickup_time = request.form['pickup_time'],
+        notes = request.form.get('notes', "")
+    )
+    db.session.add(order)
+    db.session.commit()
+    flash("Order placed! We'll inform you by phone.", "success")
+    return redirect(url_for("home") + "#order-section")
 
 if __name__ == "__main__":
     app.run(debug=True)
