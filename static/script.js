@@ -82,6 +82,7 @@ if (itemSelect) {
 // Menu filter buttonss //
 const filterButtons = document.querySelectorAll('.filter-btn');
 const menuSections = document.querySelectorAll('.menu-section');
+const fireButtons = document.getElementById('#npc');
 
 filterButtons.forEach(btn => {
   btn.addEventListener('click', () => {
