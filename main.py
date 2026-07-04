@@ -42,7 +42,7 @@ class Order(db.Model):
 
 class User(UserMixin, db.Model):
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
-    username: Mapped[str] = mapped_column(String(50), unique=True)
+    email: Mapped[str] = mapped_column(String(120), unique=True)
     password_hash: Mapped[str] = mapped_column(String(256))
 
 @login_manager.user_loader
@@ -51,6 +51,15 @@ def load_user(user_id):
 
 with app.app_context():
     db.create_all()
+    if not db.session.execute(
+        db.select(User).where(User.email == os.getenv("ADMIN_EMAIL"))
+    ).scalar_one_or_none():
+        admin = User(
+            email=os.getenv("ADMIN_EMAIL"),
+            password_hash=generate_password_hash(os.getenv("ADMIN_PASSWORD"))
+        )
+        db.session.add(admin)
+        db.session.commit()
 
 @app.context_processor
 def inject_globals():
@@ -86,10 +95,10 @@ def admin_login():
         return redirect(url_for('admin'))
 
     if request.method == "POST":
-        username = request.form.get("username", "").strip()
+        email = request.form.get("email", "").strip()
         password = request.form.get("password", "")
         user = db.session.execute(
-            db.select(User).where(User.username == username)
+            db.select(User).where(User.email == email)
         ).scalar_one_or_none()
         if user and check_password_hash(user.password_hash, password):
             login_user(user)
