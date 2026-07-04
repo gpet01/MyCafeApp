@@ -1,7 +1,130 @@
+/* ADMIN CSS */
 .login-wrap {
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 40px 24px;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 420px;
+    background: var(--mid);
+    border: 1px solid rgba(196, 145, 58, .15);
+    padding: 52px 44px;
+}
+
+.login-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.login-brand span {
+    color: var(--gold);
+}
+
+.login-sub {
+    font-size: 11px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--cream-muted);
+    margin-bottom: 40px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.flash {
+    padding: 12px 16px;
+    font-size: 13px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(196, 145, 58, .3);
+    color: var(--cream-muted);
+}
+
+.flash-error {
+    border-color: rgba(192, 80, 58, .4);
+    color: #e07060;
+}
+
+/* ADMIN - DASHBOARD */
+
+.admin-wrap {
+    padding: 120px 52px 80px;
+}
+
+.admin-header {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 52px;
+}
+
+.admin-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 300;
+    color: var(--white);
+}
+
+.admin-section {
+    background: var(--mid);
+    border: 1px solid rgba(196, 145, 58, .12);
+    padding: 36px;
+    margin-bottom: 40px;
+}
+
+.admin-section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--cream);
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(196,145,58,.12);
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.admin-table th {
+    text-align: left;
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding: 10px 16px;
+    border-bottom: 1px solid rgba(196,145,58,.15);
+}
+
+.admin-table td {
+    padding: 14px 16px;
+    color: var(--cream-muted);
+    border-bottom: 1px solid rgba(196,145,58,.06);
+}
+
+.admin-table td a {
+    color: var(--gold);
+    text-decoration: none;
+}
+
+.admin-table tbody tr:hover td {
+    background: rgba(196,145,58,.04);
+}
+
+.admin-empty {
+    color: var(--cream-muted);
+    font-size: 14px;
+    text-align: center;
+    padding: 40px 0;
 }
